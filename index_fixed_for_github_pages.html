@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>מערכת ניהול אתרי HTML</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: sans-serif; background: #f0f0f0; padding: 20px; direction: rtl; }
+    .box { background: #fff; padding: 20px; border-radius: 10px; max-width: 600px; margin: auto; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    h2 { text-align: center; }
+    input, button { padding: 10px; font-size: 16px; width: 100%; margin: 5px 0; }
+    #content { display: none; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h2>התחברות למערכת</h2>
+    <input type="email" id="email" placeholder="הכנס מייל">
+    <input type="password" id="password" placeholder="הכנס סיסמה">
+    <button onclick="checkLogin()">כניסה</button>
+  </div>
+
+  <div class="box" id="content">
+    <h2>מערכת ניהול אתרי HTML</h2>
+    <p>כאן תוכל לנהל ולהעלות קבצים. גרסה זו נועדה לשימוש לאחר פרסום ב-GitHub Pages.</p>
+    <p>להפעלה מלאה עם העלאה וקבלת קישורים – יש להפעיל את הקובץ מתוך GitHub Pages או שרת אינטרנט.</p>
+  </div>
+
+  <script>
+    const CORRECT_EMAIL = "meirimeiri20@gmail.com";
+    const CORRECT_PASSWORD = "אריאל26117";
+
+    function checkLogin() {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      if (email === CORRECT_EMAIL && password === CORRECT_PASSWORD) {
+        document.querySelector(".box").style.display = "none";
+        document.getElementById("content").style.display = "block";
+      } else {
+        alert("אימייל או סיסמה שגויים");
+      }
+    }
+  </script>
+</body>
+</html>
